@@ -13,10 +13,8 @@ class SharedResource {
 
         lock.lock(); // acquire lock
         try {
-            System.out.println(Thread.currentThread().getName() +
-                    " acquired lock");
-
-            counter++;
+            System.out.println(Thread.currentThread().getName() + " acquired lock");
+             counter++;
             System.out.println("Counter value: " + counter);
 
    
@@ -24,8 +22,7 @@ class SharedResource {
 
         } finally {
             lock.unlock(); 
-            System.out.println(Thread.currentThread().getName() +
-                    " released lock");
+            System.out.println(Thread.currentThread().getName() +" released lock");
         }
     }
 
@@ -34,8 +31,7 @@ class SharedResource {
 
         lock.lock(); 
         try {
-            System.out.println(Thread.currentThread().getName() +
-                    " entered nested method (reentrant)");
+            System.out.println(Thread.currentThread().getName() +" entered nested method (reentrant)");
         } finally {
             lock.unlock();
         }
@@ -68,3 +64,4 @@ public class ReentrantLockDemo {
         t3.start();
     }
 }
+
